@@ -39,7 +39,7 @@ int main () {
 			} else {
 				if(i == 0){
 					int max = INT_MAX;
-          int index;
+					int index;
 
 					for(int j = 0; j < value[counter] - 97 + 1; j++){
 						int my_cost = abs(cost[value[counter] - 97] - cost[j]);
@@ -58,7 +58,7 @@ int main () {
 					i += counter;
 				} else if (i + counter == size){
 					int max = INT_MAX;
-          int index;
+					int index;
 
 					for(int j = 0; j < value[i - 1] - 97 + 1; j++){
 						int my_cost = abs(cost[value[i - 1] - 97] - cost[j]);
@@ -77,7 +77,7 @@ int main () {
 					break;
 				} else {
 					int max = INT_MAX;
-          int index;
+					int index;
 
 					for(int j = 0; j < 26; j++){
 						int my_cost = abs(cost[value[i - 1] - 97] - cost[j]) + abs(cost[j] - cost[value[i + counter] - 97]);
