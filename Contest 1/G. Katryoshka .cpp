@@ -1,25 +1,25 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main(){
+int main() {
 
-	long long eye, mouth, body;
-	cin >> eye >> mouth >> body;
+  long long eye, mouth, body;
+  cin >> eye >> mouth >> body;
 
-	long long result = 0;
+  long long result = 0;
 
-	long long min = min({ eye, mouth, body });
+  long long minimum = min({ eye, mouth, body });
 
-	result += min;
-	eye -= min;
-	mouth -= min;
-	body -= min;
+  result += minimum;
+  eye -= minimum;
+  mouth -= minimum;
+  body -= minimum;
 
-	min = min({ eye / 2 ,body });
+  minimum = min({ eye / 2, body });
 
-	result += min;
+  result += minimum;
 
-	cout << result;
+  cout << result;
 
 }
