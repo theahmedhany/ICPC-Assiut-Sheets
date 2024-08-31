@@ -12,6 +12,7 @@ int main() {
   long long minimum = min({ eye, mouth, body });
 
   result += minimum;
+
   eye -= minimum;
   mouth -= minimum;
   body -= minimum;
@@ -20,6 +21,6 @@ int main() {
 
   result += minimum;
 
-  cout << result;
+  cout << result << endl;
 
 }
