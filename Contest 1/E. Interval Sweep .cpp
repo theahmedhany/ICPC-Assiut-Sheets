@@ -1,16 +1,18 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int odd, even;
-	cin >> odd >> even;
+  int number_1, number_2;
+  cin >> number_1 >> number_2;
 
-	if (odd - even == 1 || even - odd == 1 || (odd == even && even != 0 && odd != 0)) {
-		cout << "YES";
-	} else {
-		cout << "NO";
-	}
+  if (abs(number_1 - number_2) == 1) {
+    cout << "YES" << endl;
+  } else if (number_1 == number_2 && number_1 != 0) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
 
 }
