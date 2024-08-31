@@ -1,16 +1,14 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main(){
+int main() {
 
-	double discount, price;
-	cin >> discount >> price;
-	
-	double pre = 100 - discount;
-	double priceResult = price / pre;
-	double result = (discount * priceResult) + price;
+  double discount, price;
+  cin >> discount >> price;
 
-	cout << result << endl;
+  double originalPrice = price * 100 / (100 - discount);
+
+  cout << originalPrice << endl;
 
 }
