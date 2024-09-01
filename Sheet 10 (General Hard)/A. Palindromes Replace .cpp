@@ -15,7 +15,7 @@ int main() {
     if (value[i] != value[length - i - 1] && value[i] != '?' && value[length - i - 1] != '?') {
       flag = 1;
       break;
-		} else if (value[i] == '?' && value[length - i - 1] != '?') {
+    } else if (value[i] == '?' && value[length - i - 1] != '?') {
       value[i] = value[length - i - 1];
     } else if (value[length - i - 1] == '?' && value[i] != '?') {
       value[length - i - 1] = value[i];
