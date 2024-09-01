@@ -1,53 +1,47 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int students , subjects;
-	cin >> students >> subjects;
+  int students, subjects;
+  cin >> students >> subjects;
 
-	char arry_1[students * subjects];
-	char arry_2[students * subjects];
-	
-	for(int i = 0; i < students * subjects; i++){
-		cin >> arry_1[i];
-	}
+  char arry_1[students * subjects];
+  char arry_2[subjects];
 
-	int index = 0;
+  for (int i = 0; i < students * subjects; i++) {
+    cin >> arry_1[i];
+  }
 
-	for(int i = 0; i < subjects; i++){
-		int max = arry_1[i];
+  int index = 0;
 
-		for(int j = i + subjects; j < students * subjects; j++){
+  for (int i = 0; i < subjects; i++) {
+    int max = arry_1[i];
 
-			if(max < arry_1[j] && (j - i) % subjects == 0){
-				max = arry_1[j];
-			}
+    for (int j = i + subjects; j < students * subjects; j += subjects) {
+      if (max < arry_1[j] && (j - i) % subjects == 0) {
+        max = arry_1[j];
+      }
+    }
 
-		}
+    arry_2[index] = max;
+    index++;
+  }
 
-		arry_2[index] = max;
-		index++;
-	}
+  int best = 0;
 
-	int best = 0;
+  for (int i = 0; i < students; i++) {
+    int test_number = 0;
+    for (int j = i * subjects; j < (i + 1) * subjects; j++) {
+      if (arry_1[j] == arry_2[test_number]) {
+        best++;
+        break;
+      }
+      test_number++;
+    }
+  }
 
-	for(int z = 0; z < students; z++){
-		int x = 0;
+  cout << best;
 
-		for(int i = z * subjects; i < (z + 1) * subjects; i++){
-
-			if(arry_1[i] == arry_2[x]){
-				best++;
-				break;
-			}
-
-			x++;
-
-		}
-	}
-
-	cout << best;
-	
 }
