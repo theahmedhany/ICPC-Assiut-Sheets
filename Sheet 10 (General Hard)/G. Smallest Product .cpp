@@ -2,21 +2,21 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	long long size;
-	cin >> size;
+  long long size;
+  cin >> size;
 
-	double sum = 0;
+  double sum = 0;
 
-	for (int i = 0; i < size; i++) {
-		long long product;
-		cin >> product;
+  for (long long i = 0; i < size; i++) {
+    long long product;
+    cin >> product;
 
-		sum += log10(product);
-	}
+    sum += log10(product);
+  }
 
-	double result = sum / size;
-	cout << (long long) pow(10, result) + 1;
+  double result = sum / size;
+  cout << (long long) pow(10, result) + 1 << endl;
 
 }
