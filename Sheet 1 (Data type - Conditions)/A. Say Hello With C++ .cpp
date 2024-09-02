@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	string word;
-	cin >> word;
+  string word;
+  cin >> word;
 
-	cout << "Hello, " << word;
+  cout << "Hello, " << word << endl;
 
 }
