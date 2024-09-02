@@ -2,26 +2,26 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int size;
-	cin >> size;
+  int size;
+  cin >> size;
 
-	int max = size;
-	int frequency[size + 1] = {0};
+  int max = size;
+  int frequency[size + 1] = {0};
 
-	for (int i = 0; i < size; i++) {
-		int number;
-		cin >> number;
+  for (int i = 0; i < size; i++) {
+    int number;
+    cin >> number;
 
-		frequency[number] = 1;
+    frequency[number] = 1;
 
-		while (frequency[max]) {
-			cout << max << " ";
-			max--;
-		}
+    while (frequency[max]) {
+      cout << max << " ";
+      max--;
+    }
 
-		cout << endl;
-	}
+    cout << endl;
+  }
 
 }
