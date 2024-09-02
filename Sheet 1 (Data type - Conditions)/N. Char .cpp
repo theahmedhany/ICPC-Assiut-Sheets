@@ -2,34 +2,23 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	char txt;
-	cin >> txt;
+  char txt;
+  cin >> txt;
 
-	int txt_ascii = txt;
+  int txt_ascii = txt;
 
-	if (txt_ascii >= 65 && txt_ascii < 90){
-
-		int final_ascii = txt_ascii + 32;
-		char result_txt = final_ascii;
-		cout << result_txt;
-
-	}else if (txt_ascii >= 97 && txt_ascii < 122){
-
-		int final_ascii = txt_ascii - 32;
-		char result_txt = final_ascii;
-		cout << result_txt;
-
-	}else if (txt_ascii == 122){
-
-		cout << "Z";
-
-	}else if (txt_ascii == 90){
-
-		cout << "A";
-
-	}
+  if (txt_ascii >= 'A' && txt_ascii <= 'Z') {
+    char result_txt = txt_ascii + 32;
+    cout << result_txt;
+  } else if (txt_ascii >= 'a' && txt_ascii <= 'z') {
+    char result_txt = txt_ascii - 32;
+    cout << result_txt;
+  } else if (txt_ascii == 'z') {
+    cout << "Z";
+  } else if (txt_ascii == 'Z') {
+    cout << "A";
+  }
 
 }
-
