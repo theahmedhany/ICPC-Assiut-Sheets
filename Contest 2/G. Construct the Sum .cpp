@@ -4,42 +4,39 @@ using namespace std;
 
 int result[1000005];
 
-int main(){
+int main() {
 
   long long counter;
   cin >> counter;
 
-  long long count = 0;
-	long long number_1, number_2;
-
-  while (counter--){
-
+  while (counter--) {
+    long long number_1, number_2;
     cin >> number_1 >> number_2;
 
     if (number_1 * (number_1 + 1) / 2 < number_2) {
-      cout << -1;
-    } else {
-      long long sum = 0;
-      for (int ii = number_1; ii >= 1; ii--){
-        if (sum + ii <= number_2) {
-          sum += ii;
-          result[count] = ii;
-          count++;
-        }
+      cout << -1 << endl;
+      continue;
+    }
 
-        if (sum == number_2) {
-          break;
-        }
+    long long sum = 0;
+    long long count = 0;
+
+    for (long long i = number_1; i >= 1; i--) {
+      if (sum + i <= number_2) {
+        sum += i;
+        result[count] = i;
+        count++;
+      }
+
+      if (sum == number_2) {
+        break;
       }
     }
 
-    for (int iii = 0; iii < count; iii++){
-      cout << result[iii] << " ";
+    for (long long j = 0; j < count; j++) {
+      cout << result[j] << " ";
     }
-		
     cout << endl;
-    count = 0;
-
   }
 
 }
