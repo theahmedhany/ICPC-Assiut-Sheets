@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   long long seet;
   cin >> seet;
@@ -16,6 +16,6 @@ int main(){
     column = 3 - (seet % 4);
   }
 
-  cout << row << " " << column;
+  cout << row << " " << column << endl;
 
 }
