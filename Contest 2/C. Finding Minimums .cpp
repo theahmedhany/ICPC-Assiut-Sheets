@@ -2,35 +2,34 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-  int size;
-  int sequence;
-  int counter = 0;
-  int flag = 1;
-  int min = 0;
-  int number;
-
+  int size, sequence;
   cin >> size >> sequence;
 
-  for (int i = 1; i <= size; i++){
+  int counter = 0;
+  int min_value;
+  int number;
+
+  for (int i = 1; i <= size; i++) {
     cin >> number;
-    if (flag == 1) {
-      min = number;
-      flag = 0;
+
+    if (counter == 0) {
+      min_value = number;
     } else {
-      if (number < min) {
-        min = number;
+      if (number < min_value) {
+        min_value = number;
       }
     }
 
     counter++;
 
     if (counter == sequence || i == size) {
-      cout << min << " ";
+      cout << min_value << " ";
       counter = 0;
-      flag = 1;
     }
   }
+
+  cout << endl;
 
 }
