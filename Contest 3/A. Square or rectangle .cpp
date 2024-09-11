@@ -2,22 +2,20 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int counter;
-	cin >> counter;
+  int counter;
+  cin >> counter;
 
-	for (int i = 1; i <= counter; i++){
+  for (int i = 0; i < counter; i++) {
+    int number_1, number_2;
+    cin >> number_1 >> number_2;
 
-		int number_1, number_2;
-		cin >> number_1 >> number_2;
-
-		if (number_1 == number_2){
-			cout << "Square\n";
-		}else{
-			cout << "Rectangle\n";
-		}
-		
-	}
+    if (number_1 == number_2) {
+      cout << "Square\n";
+    } else {
+      cout << "Rectangle\n";
+    }
+  }
 
 }
