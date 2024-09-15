@@ -2,21 +2,22 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   int start, end;
   cin >> start >> end;
 
-  int counter = 0;
+  int count = 0;
 
-  for (int i = 0; i <= start; i++){
-    for (int j = 0; j <= start; j++){
-      if (end - i - j >= 0 && end - i - j <= start){
-        counter++;
+  for (int i = 0; i <= start; i++) {
+    for (int j = 0; j <= start; j++) {
+      int remaining = end - i - j;
+      if (remaining >= 0 && remaining <= start) {
+        count++;
       }
     }
   }
 
-  cout << counter << endl;
+  cout << count << endl;
 
 }
