@@ -2,13 +2,13 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int counter;
-	cin >> counter;
+  int counter;
+  cin >> counter;
 
-	for(int i = 1; i <= counter; i++){
-		cout << i << endl;
-	}
+  for (int i = 1; i <= counter; i++) {
+    cout << i << endl;
+  }
 
 }
