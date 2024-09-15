@@ -2,24 +2,22 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	char symbol;
-	cin >> symbol;
+  char symbol;
+  cin >> symbol;
 
-	int lines;
-	cin >> lines;
+  int lines;
+  cin >> lines;
 
-	int times;
+  for (int i = 1; i <= lines; i++) {
+    int times;
+    cin >> times;
 
-	for (int i = 1; i <= lines; i++){
-		cin >> times;
-		
-		for (int i = 1; i <= times; i++){
-			cout << symbol;
-		}
-
-		cout << endl;
-	}
+    for (int j = 1; j <= times; j++) {
+      cout << symbol;
+    }
+    cout << endl;
+  }
 
 }
