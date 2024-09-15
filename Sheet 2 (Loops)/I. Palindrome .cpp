@@ -2,14 +2,13 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   string number_1;
   cin >> number_1;
 
   int counter = 0;
-  int result_1, result_2 ;
-
+  int result_1, result_2;
 
   int size = number_1.size();
   char number_2[size];
@@ -32,7 +31,7 @@ int main(){
   if (result_1 == result_2){
     cout << "YES" << endl;
   } else {
-		cout << "NO" << endl;
+    cout << "NO" << endl;
   }
 
 }

@@ -2,23 +2,23 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int counter;
-	cin >> counter;
+  int counter;
+  cin >> counter;
 
-	int number;
+  int number;
 
-	for (int i = 1; i <= counter; i++){
-		cin >> number;
+  for (int i = 1; i <= counter; i++) {
+    cin >> number;
 
-		long long factorial = 1;
+    long long factorial = 1;
 
-		for (int j = 1; j <= number; j++){
-			factorial *= j;
-		}
+    for (int j = 1; j <= number; j++) {
+      factorial *= j;
+    }
 
-		cout << factorial << endl;
-	}
+    cout << factorial << endl;
+  }
 
 }
