@@ -2,21 +2,22 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int counter;
-	cin >> counter;
+  int counter;
+  cin >> counter;
 
-	int number;
-	int max = 0;
+  int number;
+  int max = 0;
 
-	for (int i = 1; i <= counter; i++){
-		cin >> number;
+  for (int i = 1; i <= counter; i++) {
+    cin >> number;
 
-		if (number > max)
-			max = number;
-	}
+    if (number > max) {
+      max = number;
+    }
+  }
 
-	cout << max;
+  cout << max << endl;
 
 }

@@ -2,19 +2,19 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int counter;
+  int counter;
 
-	for (int i = 0; ; i++){
-		cin >> counter;
-	
-		if (counter == 1999) {
-			cout << "Correct\n";
-			break;
-		} else {
-			cout << "Wrong\n";
-		}
-	}
+  while (true) {
+    cin >> counter;
+
+    if (counter == 1999) {
+      cout << "Correct\n";
+      break;
+    } else {
+      cout << "Wrong\n";
+    }
+  }
 
 }
