@@ -2,23 +2,22 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-  int power, monster;
-  cin >> power >> monster;
+  int power, monsters_number;
+  cin >> power >> monsters_number;
 
-  vector<pair<int, int>> arry(monster);
+  vector<pair<int, int>> monsters(monsters_number);
 
-  for(int i = 0; i < monster; i++){
-    cin >> arry[i].first;
-    cin >> arry[i].second;
+  for (int i = 0; i < monsters_number; i++) {
+    cin >> monsters[i].first >> monsters[i].second;
   }
 
-  sort(arry.begin(), arry.end());
+  sort(monsters.begin(), monsters.end());
 
-  for(int i = 0; i < monster; i++){
-    if (power > arry[i].first) {
-      power += arry[i].second;
+  for (int i = 0; i < monsters_number; i++) {
+    if (power > monsters[i].first) {
+      power += monsters[i].second;
     } else {
       cout << "NO" << endl;
       return 0;
