@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   int size;
   cin >> size;
@@ -10,32 +10,28 @@ int main(){
   int arry[size];
   int sum = 0;
 
-  if (size == 1){
+  if (size == 1) {
     cout << 1 << endl;
     return 0;
   }
-  
-  for (int i = 0; i < size; i++){
-    int coin;
-    cin >> coin;
 
-    arry[i] = coin;
-
-    sum += coin;
+  for (int i = 0; i < size; i++) {
+    cin >> arry[i];
+    sum += arry[i];
   }
-  
+
   int final_size = sizeof(arry) / sizeof(arry[0]);
   sort(arry, arry + final_size);
 
-  int result = sum / 2;
-  int myCoin = 0;
+  int half_sum = sum / 2;
+  int my_coin = 0;
   int counter = 0;
 
-  for (int i = size - 1; i >= 0; i--){
-    myCoin += arry[i];
+  for (int i = size - 1; i >= 0; i--) {
+    my_coin += arry[i];
     counter++;
 
-    if (myCoin > result){
+    if (my_coin > half_sum) {
       break;
     }
   }
