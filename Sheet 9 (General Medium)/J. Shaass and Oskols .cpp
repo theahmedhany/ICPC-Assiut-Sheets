@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   const int max = 100;
   int birds[max];
@@ -10,30 +10,31 @@ int main(){
   int size;
   cin >> size;
 
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     cin >> birds[i];
   }
 
   int cases;
   cin >> cases;
 
-  for (int i = 0; i < cases; i++){
-    int number_1, number_2;
-    cin >> number_1 >> number_2;
-    --number_1;
+  for (int i = 0; i < cases; i++) {
+    int wire, position;
+    cin >> wire >> position;
 
-		if (number_1 != 0){
-			birds[number_1 - 1] += number_2 - 1;
-		}
+    --wire;
 
-		if (number_1 != size - 1){
-			birds[number_1 + 1] += birds[number_1] - number_2;
-		}
+    if (wire != 0) {
+      birds[wire - 1] += position - 1;
+    }
 
-		birds[number_1] = 0;
+    if (wire != size - 1) {
+      birds[wire + 1] += birds[wire] - position;
+    }
+
+    birds[wire] = 0;
   }
 
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     cout << birds[i] << endl;
   }
 

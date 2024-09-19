@@ -9,7 +9,7 @@ int visited[general_size][general_size];
 vector <pair<pair<int, int>, int>> result;
 int number_1, number_2;
 
-void add(int row, int column, int moves){
+void add(int row, int column, int moves) {
 
   int column_move = column + moves;
   int column_copy = column;
@@ -45,7 +45,7 @@ void add(int row, int column, int moves){
 
 }
 
-int checkStarts(int row, int column){
+int checkStarts(int row, int column) {
 
   int right = 0, left = 0, upper = 0, lower = 0;
   int column_copy = column;
@@ -80,7 +80,7 @@ int checkStarts(int row, int column){
 
 }
 
-int main(){
+int main() {
 
   cin >> number_1 >> number_2;
 
