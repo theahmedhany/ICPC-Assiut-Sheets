@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   string txt, add;
-	string left, right;
+  string left, right;
 
   cin >> txt;
 
@@ -16,16 +16,18 @@ int main(){
 
   cin >> add;
 
-  for (auto pointer : add)
-    if (left.size() <= right.size())
-			left += pointer;
-    else
-			right += pointer;
+  for (auto pointer : add) {
+    if (left.size() <= right.size()) {
+      left += pointer;
+    } else {
+      right += pointer;
+    }
+  }
 
-	if (left.size() == right.size()){
-		cout << left << "|" << right << endl;
-	} else {
-		cout << "Impossible" << endl;
-	}
+  if (left.size() == right.size()) {
+    cout << left << "|" << right << endl;
+  } else {
+    cout << "Impossible" << endl;
+  }
 
 }
