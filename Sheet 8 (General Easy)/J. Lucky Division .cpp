@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool isLucky(int value) {
+bool isLucky(int value){
 
   while (value > 0) {
     int digit = value % 10;
