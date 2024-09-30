@@ -1,42 +1,40 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main (){
+int main() {
 
   int size;
   cin >> size;
 
   int arry[size];
 
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     cin >> arry[i];
   }
-  
-  int start = 0 , end = size - 1 ;
-  int result_1 = 0 , result_2 = 0;
-  int max = 0 , play = 0;
 
-  while (start <= end){
+  int start = 0, end = size - 1;
+  int score_player_1 = 0, score_player_2 = 0;
+  int max_value = 0, turn = 0;
 
-    if (arry[start] >= arry[end]){
-      max = arry[start];
+  while (start <= end) {
+    if (arry[start] >= arry[end]) {
+      max_value = arry[start];
       start++;
     } else {
-      max = arry[end];
+      max_value = arry[end];
       end--;
     }
 
-    if (play % 2 == 0){
-      result_1 += max;
+    if (turn % 2 == 0) {
+      score_player_1 += max_value;
     } else {
-      result_2 += max;
+      score_player_2 += max_value;
     }
-		
-    play++;
 
+    turn++;
   }
 
-  cout << result_1 << " " << result_2 <<endl;
-  
+  cout << score_player_1 << " " << score_player_2 << endl;
+
 }
