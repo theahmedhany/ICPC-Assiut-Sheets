@@ -1,29 +1,30 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main (){
+int main() {
 
-  int size;
-  cin >> size;
+  int events;
+  cin >> events;
 
   int number;
   int police = 0;
-  int problem = 0;
+  int problems = 0;
 
-  for (int i = 0 ; i < size; i++){
-
+  for (int i = 0; i < events; i++) {
     cin >> number;
 
-    if (number == -1 && police == 0){
-      problem++;
-    }else if (number == -1 && police != 0){
-      police--;
-    }else{
+    if (number == -1) {
+      if (police == 0) {
+        problems++;
+      } else {
+        police--;
+      }
+    } else {
       police += number;
     }
   }
 
-  cout << problem << endl ;
+  cout << problems << endl;
 
 }

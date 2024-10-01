@@ -1,32 +1,30 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main(){
+int main() {
 
-	long long turns, ice_cream;
-	cin >> turns >> ice_cream;
+  long long turns, ice_cream;
+  cin >> turns >> ice_cream;
 
-	int counter = 0;
+  long long counter = 0;
 
-	for(int i = 0; i < turns; i++){
+  for (long long i = 0; i < turns; i++) {
+    char operation;
+    long long number;
+    cin >> operation >> number;
 
-		char operation;
-		long long number;
-		cin >> operation >> number;
-		
-		if(operation == '+'){
-			ice_cream += number;
-		} else {
-			if(number <= ice_cream){
-				ice_cream -= number;
-			} else {
-				counter++;
-			}
-		}
+    if (operation == '+') {
+      ice_cream += number;
+    } else if (operation == '-') {
+      if (number <= ice_cream) {
+        ice_cream -= number;
+      } else {
+        counter++;
+      }
+    }
+  }
 
-	}
-
-	cout << ice_cream << " " << counter << endl;
+  cout << ice_cream << " " << counter << endl;
 
 }
