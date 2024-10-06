@@ -2,30 +2,27 @@
 
 using namespace std;
 
-int flag = 0;
+void print(int number, bool flag = false) {
 
-void print(int number){
+  if (number == 0) {
+    return;
+  }
 
-	if(number == 0){
-		return;
-	}
+  if (flag) {
+    cout << " ";
+  }
 
-	if(flag){
-		cout << " ";
-	}
+  cout << number;
 
-	cout << number--;
-	flag = 1;
-
-	return print(number);
+  print(number - 1, true);
 
 }
 
-int main(){
+int main() {
 
-	int number;
-	cin >> number;
+  int number;
+  cin >> number;
 
-	print(number);
+  print(number);
 
 }

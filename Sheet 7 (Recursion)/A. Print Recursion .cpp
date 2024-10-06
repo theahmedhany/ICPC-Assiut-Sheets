@@ -2,9 +2,9 @@
 
 using namespace std;
 
-void printRecursion (int number){
+void printRecursion(int number) {
 
-  if (number == 0){
+  if (number == 0) {
     return;
   }
 
