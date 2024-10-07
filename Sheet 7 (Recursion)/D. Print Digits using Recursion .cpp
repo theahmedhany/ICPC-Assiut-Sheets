@@ -2,36 +2,31 @@
 
 using namespace std;
 
-void printDigits(int number){
+void printDigits(int number) {
 
-	if(number <= 0){
-		return;
-	}
-
-	printDigits(number / 10);
-
-	cout << number % 10 << " ";
+  if (number <= 0) {
+    return;
+  }
+  printDigits(number / 10);
+  cout << number % 10 << " ";
 
 }
 
-int main(){
+int main() {
 
-	int test;
-	cin >> test;
+  int test;
+  cin >> test;
 
-	while(test--){
+  while (test--) {
+    int number;
+    cin >> number;
 
-		int number;
-		cin >> number;
-
-		if (number == 0){
-			cout << "0" << endl;
-			continue;
-		}
-
-		printDigits(number);
-		cout << endl;
-
-	}
+    if (number == 0) {
+      cout << "0" << endl;
+      continue;
+    }
+    printDigits(number);
+    cout << endl;
+  }
 
 }
