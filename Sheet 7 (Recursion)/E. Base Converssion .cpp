@@ -2,32 +2,30 @@
 
 using namespace std;
 
-void binaryConverssion(int number){
+void binaryConversion(int number) {
 
-	if(number == 0){
-		return;
-	}
+  if (number == 0) {
+    return;
+  }
 
-	binaryConverssion(number / 2);
+  binaryConversion(number / 2);
 
-	cout << number % 2;
+  cout << number % 2;
 
 }
 
 int main() {
 
-	int size;
-	cin >> size;
+  int size;
+  cin >> size;
 
-	while(size--){
+  while (size--) {
+    int number;
+    cin >> number;
 
-		int number;
-		cin >> number;
+    binaryConversion(number);
 
-		binaryConverssion(number);
-		
-		cout << endl;
-
-	}
+    cout << endl;
+  }
 
 }

@@ -5,26 +5,26 @@ using namespace std;
 int cases;
 int arry[1000];
 
-void evenIndices(int index){
+void evenIndices(int index) {
 
-  if(index >= cases){
-		return;
-	}
+  if (index >= cases) {
+    return;
+  }
 
-	evenIndices(index + 2);
+  evenIndices(index + 2);
 
-	cout << arry[index] << " ";
+  cout << arry[index] << " ";
 
 }
 
 int main() {
 
-	cin >> cases;
+  cin >> cases;
 
-	for(int i = 0; i < cases; i++){
-		cin >> arry[i];
-	}
+  for (int i = 0; i < cases; i++) {
+    cin >> arry[i];
+  }
 
-	evenIndices(0);
+  evenIndices(0);
 
 }
