@@ -2,21 +2,21 @@
 
 using namespace std;
 
-long long printFactorial(int number){
+long long printFactorial(int number) {
 
-	if(number <= 1){
-		return 1;
-	}
+  if (number <= 1) {
+    return 1;
+  }
 
-	return number * printFactorial(number - 1);
+  return number * printFactorial(number - 1);
 
 }
 
-int main(){
+int main() {
 
-	int number;
-	cin >> number;
+  int number;
+  cin >> number;
 
-	cout << printFactorial(number) << endl;
+  cout << printFactorial(number) << endl;
 
 }

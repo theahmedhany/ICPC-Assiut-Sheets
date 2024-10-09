@@ -2,32 +2,31 @@
 
 using namespace std;
 
-int input;
+void invertedPyramid(int row, int input) {
 
-void invertedPyramid(int row){
+  if (row == 0) {
+    return;
+  }
 
-	if(row == 0){
-		return;
-	}
+  for (int i = 1; i <= input - row; i++) {
+    cout << " ";
+  }
 
-	for(int i = 1; i <= input - row; i++){
-		cout << " ";
-	}
+  for (int i = 1; i <= row * 2 - 1; i++) {
+    cout << "*";
+  }
 
-	for(int i = 1; i <= row * 2 - 1; i++){
-		cout << "*";
-	}
+  cout << endl;
 
-	cout << endl;
-
-	invertedPyramid(row - 1);
+  invertedPyramid(row - 1, input);
 
 }
 
-int main(){
+int main() {
 
-	cin >> input;
+  int input;
+  cin >> input;
 
-	invertedPyramid(input);
+  invertedPyramid(input, input);
 
 }

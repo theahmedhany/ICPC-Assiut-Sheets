@@ -5,30 +5,29 @@ using namespace std;
 string txt;
 int txt_size;
 
-int countVowels(int index){
+int countVowels(int index) {
 
-	if (index == txt_size){
-		return 0;
-	}
-	
-	char value = tolower(txt[index]);
+  if (index == txt_size) {
+    return 0;
+  }
 
-	int answer = 0;
+  char value = tolower(txt[index]);
 
-	if (value == 'a' || value == 'i' || value == 'o' || value == 'e' || value == 'u'){
-		answer++;
-	}
-	
-	return answer + countVowels(index + 1);
+  int answer = 0;
+  if (value == 'a' || value == 'e' || value == 'i' || value == 'o' || value == 'u') {
+    answer++;
+  }
+
+  return answer + countVowels(index + 1);
 
 }
 
-int main(){
+int main() {
 
-	getline(cin, txt);
+  getline(cin, txt);
 
-	txt_size = txt.size();
+  txt_size = txt.size();
 
-	cout << countVowels(0) << endl;
+  cout << countVowels(0) << endl;
 
 }
