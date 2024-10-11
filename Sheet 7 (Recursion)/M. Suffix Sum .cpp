@@ -5,25 +5,25 @@ using namespace std;
 int arry[100000];
 int arry_size;
 
-long long suffixSum(int index){
+long long suffixSum(int index) {
 
-	if(index == arry_size){
-		return 0;
-	}
+  if (index == arry_size) {
+    return 0;
+  }
 
-	return arry[index] + suffixSum(index + 1);
+  return arry[index] + suffixSum(index + 1);
 
 }
 
-int main(){
+int main() {
 
-	int size;
-	cin >> arry_size >> size;
+  int size;
+  cin >> arry_size >> size;
 
-	for(int i = 0; i < arry_size; i++){
-		cin >> arry[i];
-	}
+  for (int i = 0; i < arry_size; i++) {
+    cin >> arry[i];
+  }
 
-	cout << suffixSum(arry_size - size) << endl;
+  cout << suffixSum(arry_size - size) << endl;
 
 }
