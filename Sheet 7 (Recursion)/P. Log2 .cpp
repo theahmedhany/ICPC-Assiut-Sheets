@@ -4,25 +4,24 @@ using namespace std;
 
 int counter = 0;
 
-void getLog(long long number){
+void getLog(long long number) {
 
-	if(number == 1){
-		return;
-	}
+  if (number == 1) {
+    return;
+  }
 
-	counter++;
+  counter++;
 
-	getLog(number / 2);
+  getLog(number / 2);
 
 }
 
-int main(){
+int main() {
 
-	long long number;
-	cin >> number;
+  long long number;
+  cin >> number;
 
-	getLog(number);
-
-	cout << counter << endl;
+  getLog(number);
+  cout << counter << endl;
 
 }

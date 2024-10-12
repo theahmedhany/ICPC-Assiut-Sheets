@@ -4,29 +4,28 @@ using namespace std;
 
 int counter = 0;
 
-void sequenceProcess(long long number){
+void sequenceProcess(long long number) {
 
-	counter++;
+  counter++;
 
-	if(number == 1){
-		return;
-	}
+  if (number == 1) {
+    return;
+  }
 
-	if(number % 2 == 0){
-		sequenceProcess(number / 2);
-	} else {
-		sequenceProcess(3 * number + 1);
-	}
+  if (number % 2 == 0) {
+    sequenceProcess(number / 2);
+  } else {
+    sequenceProcess(3 * number + 1);
+  }
 
 }
 
-int main(){
+int main() {
 
-	long long number;
-	cin >> number;
+  long long number;
+  cin >> number;
 
-	sequenceProcess(number);
-
-	cout << counter;
+  sequenceProcess(number);
+  cout << counter;
 
 }
