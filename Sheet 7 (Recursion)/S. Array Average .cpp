@@ -5,24 +5,24 @@ using namespace std;
 double arry[100];
 int arry_size;
 
-double arrayAverage(int index, double result){
+double arrayAverage(int index, double result) {
 
-	if(arry_size == index){
-		return result / arry_size;
-	}
+  if (index == arry_size) {
+    return result / arry_size;
+  }
 
-	return arrayAverage(index + 1, result + arry[index]);
+  return arrayAverage(index + 1, result + arry[index]);
 
 }
 
-int main(){
+int main() {
 
-	cin >> arry_size;
+  cin >> arry_size;
 
-	for(int i = 0; i < arry_size; i++){
-		cin >> arry[i];
-	}
+  for (int i = 0; i < arry_size; i++) {
+    cin >> arry[i];
+  }
 
-	cout << fixed << setprecision(6) << arrayAverage(0 , 0);
+  cout << fixed << setprecision(6) << arrayAverage(0, 0) << endl;
 
 }
