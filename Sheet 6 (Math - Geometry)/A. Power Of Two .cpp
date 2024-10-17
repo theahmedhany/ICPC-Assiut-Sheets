@@ -7,9 +7,9 @@ int main() {
   long long number;
   cin >> number;
 
-  double answer  = log2(number) / log2(2);
+  double answer = log2(number) / log2(2);
 
-  if ((answer - (int) answer) != 0){
+  if ((answer - (int) answer) != 0) {
     cout << "NO" << "\n";
   } else {
     cout << "YES" << "\n";
