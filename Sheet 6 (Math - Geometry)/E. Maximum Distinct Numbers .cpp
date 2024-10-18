@@ -4,22 +4,19 @@ using namespace std;
 
 int main() {
 
-	long long number;
-	cin >> number;
+  long long number;
+  cin >> number;
 
-	for(long long i = 1 ; ; i++){
+  long long i = 1;
 
-		if(i > number){
-
-			cout << i - 1;
-			return 0;
-
-		} else {
-
-			number -= i;
-
-		}
-
-	}
+  while (true) {
+    if (i > number) {
+      cout << i - 1 << endl;
+      return 0;
+    } else {
+      number -= i;
+    }
+    i++;
+  }
 
 }
