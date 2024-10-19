@@ -9,18 +9,14 @@ int main() {
 
   long long answer = 0;
 
-  for (int i = 1; i <= sqrt(number); i++){
-
-    if (number % i == 0){
-
-      if (i == number / i){
+  for (long long i = 1; i <= sqrt(number); i++) {
+    if (number % i == 0) {
+      if (i == number / i) {
         answer += i;
       } else {
         answer += i + number / i;
       }
-
     }
-
   }
 
   cout << answer << endl;
