@@ -2,29 +2,26 @@
 
 using namespace std;
 
-long long Factorial(long long number){
+long long Factorial(long long number) {
 
-	long long counter = 1;
-	long long result = 1;
+  long long counter = 1;
+  long long result = 1;
 
-	while(counter <= number){
+  while (counter <= number) {
+    result *= counter;
+    counter++;
+  }
 
-		result *= counter;
-		counter++;
-
-	}
-
-	return result;
+  return result;
 
 }
 
 int main() {
 
-	long long number_1 , number_2;
-	cin >> number_1 >> number_2;
+  long long number_1, number_2;
+  cin >> number_1 >> number_2;
 
-	cout << Factorial(number_1) / (Factorial(number_1 - number_2) * Factorial(number_2)) << " ";
-	cout << Factorial(number_1) / (Factorial(number_1 - number_2));
+  cout << Factorial(number_1) / (Factorial(number_1 - number_2) * Factorial(number_2)) << " ";
+  cout << Factorial(number_1) / (Factorial(number_1 - number_2));
 
 }
-
