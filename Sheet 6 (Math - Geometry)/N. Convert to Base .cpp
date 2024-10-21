@@ -2,82 +2,77 @@
 
 using namespace std;
 
-long long Number(char txt){
+long long Number(char txt) {
 
-	if(txt >= '0' && txt <= '9'){
-		return txt - '0';
-	} else {
-		return txt - 'A' + 10;
-	}
-
-}
-
-char resultNumber(long long digit){
-
-	if(digit >= 0 && digit <= 9){
-		return digit + '0';
-	} else {
-		return digit + 'A' - 10;
-	}
+  if (txt >= '0' && txt <= '9') {
+    return txt - '0';
+  } else {
+    return txt - 'A' + 10;
+  }
 
 }
 
-long long toDeciml(char* value, long long base){
+char resultNumber(long long digit) {
 
-	long long size = strlen(value);
-	long long power = 1;
-	long long result = 0;
-
-	for(int i = size - 1; i >= 0; i--){
-		result += Number(value[i]) * power;
-		power *= base;
-	}
-
-	return result;
+  if (digit >= 0 && digit <= 9) {
+    return digit + '0';
+  } else {
+    return digit + 'A' - 10;
+  }
 
 }
 
-char * fromDecimal(char answer[], long long base, long long number){
+long long toDecimal(const char* value, long long base) {
 
-	int index = 0;
+  long long size = strlen(value);
+  long long power = 1;
+  long long result = 0;
 
-	while(number > 0){
-		answer[index++] = resultNumber(number % base);
-		number /= base;
-	}
+  for (int i = size - 1; i >= 0; i--) {
+    result += Number(value[i]) * power;
+    power *= base;
+  }
 
-	answer[index] = '\0';
-	reverse(answer, answer + index);
+  return result;
 
-	return answer;
+}
+
+char * fromDecimal(char answer[], long long base, long long number) {
+
+  int index = 0;
+  while (number > 0) {
+    answer[index++] = resultNumber(number % base);
+    number /= base;
+  }
+
+  answer[index] = '\0';
+  reverse(answer, answer + index);
+
+  return answer;
 
 }
 
 int main() {
 
-	int cases;
-	cin >> cases;
+  int cases;
+  cin >> cases;
 
-	if(cases == 1){
+  if (cases == 1) {
+    char arry[35] = {""};
+    cin >> arry;
 
-		char arry[35] = {""};
+    long long base;
+    cin >> base;
 
-		cin >> arry;
+    cout << toDecimal(arry, base);
 
-		long long base;
-		cin >> base;
+  } else {
+    long long number, base;
+    cin >> number >> base;
 
-		cout << toDeciml(arry, base);
+    char result[100];
 
-	} else {
-
-		long long number, base;
-		cin >> number >> base;
-
-		char result[100];
-
-		cout << fromDecimal(result, base, number);
-
-	}
+    cout << fromDecimal(result, base, number);
+  }
 
 }
