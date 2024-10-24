@@ -4,23 +4,23 @@ using namespace std;
 
 void print(int number) {
 
-	for (int i = 1; i <= number; i++) {
-		if (i != 1) {
-			cout << " ";
-		}
-
-		cout << i;
-	}
+  for (int i = 1; i <= number; i++) {
+    if (i != 1) {
+      cout << " ";
+    }
+    cout << i;
+  }
+  cout << endl;
 
 }
 
 int main() {
 
-	int number;
-	cin >> number;
+  int number;
+  cin >> number;
 
-	print(number);
-	
+  print(number);
+
 }
 
 
