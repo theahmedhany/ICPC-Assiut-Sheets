@@ -2,15 +2,15 @@
 
 using namespace std;
 
-void Times(int times){
+void Times(int times) {
 
-  for (int i = 0; i < times; i++){
-		int number;
+  for (int i = 0; i < times; i++) {
+    int number;
     string txt;
 
     cin >> number >> txt;
 
-    for (int i = 0; i < number; i++){
+    for (int j = 0; j < number; j++) {
       cout << txt << " ";
     }
 
