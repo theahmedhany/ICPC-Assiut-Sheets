@@ -2,22 +2,23 @@
 
 using namespace std;
 
-void shiftRigth(int size , int arr[] , int shifts){
+void shiftRight(int size, int arr[], int shifts) {
 
-  for (int i = size - shifts; i < size; i++){
+  for (int i = size - shifts; i < size; i++) {
     cout << arr[i] << " ";
   }
 
-  for (int i = 0; i < size - shifts; i++){
-  cout << arr[i] << " ";
+  for (int i = 0; i < size - shifts; i++) {
+    cout << arr[i] << " ";
   }
+
+  cout << endl;
 
 }
 
-
 int main() {
 
-  int size , shifts;
+  int size, shifts;
   cin >> size >> shifts;
 
   int arr[size];
@@ -28,6 +29,6 @@ int main() {
 
   shifts %= size;
 
-  shiftRigth(size , arr , shifts);
+  shiftRight(size, arr, shifts);
 
 }

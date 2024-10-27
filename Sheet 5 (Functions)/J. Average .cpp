@@ -4,9 +4,9 @@ using namespace std;
 
 double getAverage(int size) {
 
-  double sum = 0 , value = 0;
+  double sum = 0, value = 0;
 
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     cin >> value;
     sum += value;
   }
@@ -20,6 +20,6 @@ int main() {
   int size;
   cin >> size;
 
-  cout << setprecision(8) << getAverage(size);
+  cout << fixed << setprecision(8) << getAverage(size) << endl;
 
 }
