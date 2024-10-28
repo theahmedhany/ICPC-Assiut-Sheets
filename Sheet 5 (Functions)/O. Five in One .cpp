@@ -2,104 +2,87 @@
 
 using namespace std;
 
-bool isPalindrom(int size){
+bool isPalindrome(int size) {
 
-  int template = size;
-  int result = 0;
+  int original = size;
+  int reversed = 0;
 
-  while(template > 0){
-    result = result * 10 + template % 10;
-    template /= 10;
+  while (original > 0) {
+    reversed = reversed * 10 + original % 10;
+    original /= 10;
   }
 
-  return size == result;
+  return size == reversed;
 
 }
 
-bool isPrime(int size){
+bool isPrime(int number) {
 
-  if(size <= 1){
-		return false;
-	}
+  if (number <= 1) return false;
+  if (number == 2) return true;
+  if (number % 2 == 0) return false;
 
-  if(size == 2){
-		return true;
-	}
-
-  if(size % 2 == 0){
-		return false;
-	}
-
-  for(int i = 3; i * i <= size; i += 2){
-    if(size % i == 0){
-			return false;
-		}
+  for (int i = 3; i * i <= number; i += 2) {
+    if (number % i == 0) return false;
   }
 
   return true;
 
 }
 
-int DividerosNumber(int size){
+int divisorCount(int size) {
 
-  int counter = 0;
+  int count = 0;
 
-  for(int i = 1; i * i <= size; i++){
-    if(size % i == 0){
-      counter++;
-
-      if(size / i != i){
-        counter++;
-			}
+  for (int i = 1; i * i <= size; i++) {
+    if (size % i == 0) {
+      count++;
+      if (size / i != i) count++;
     }
   }
 
-  return counter;
+  return count;
 
 }
 
-
-int main(){
+int main() {
 
   int size;
   cin >> size;
 
   int arry[size];
-
-  for(int i = 0; i < size; i++)
+  for (int i = 0; i < size; i++)
     cin >> arry[i];
 
   int max_value = arry[0];
   int min_value = arry[0];
 
-  int palidrom_count = 0;
-	int prime_count = 0;
-  int divisors_count = 0;
-	int answer = 0;
+  int palindrome_count = 0;
+  int prime_count = 0;
+  int max_divisors = 0;
+  int answer = 0;
 
-  for(int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
+    max_value = max(arry[i], max_value);
+    min_value = min(arry[i], min_value);
 
-    max_value = max(arry[i] , max_value);
-    min_value = min(arry[i] , min_value);
-
-    palidrom_count += isPalindrom(arry[i]);
+    palindrome_count += isPalindrome(arry[i]);
     prime_count += isPrime(arry[i]);
 
-    int divisors_number = DividerosNumber(arry[i]);
-    if(divisors_number == divisors_count){
-        answer = max(answer , arry[i]);
-    }
-    else if(divisors_number > divisors_count){
-        answer = arry[i];
-        divisors_count = divisors_number;
-    }
+    int divisors = divisorCount(arry[i]);
 
+    if (divisors == max_divisors) {
+      answer = max(answer, arry[i]);
+    } else if (divisors > max_divisors) {
+      answer = arry[i];
+      max_divisors = divisors;
+    }
   }
 
   cout << "The maximum number : " << max_value << endl;
   cout << "The minimum number : " << min_value << endl;
   cout << "The number of prime numbers : " << prime_count << endl;
-  cout << "The number of palindrome numbers : " << palidrom_count << endl;
+  cout << "The number of palindrome numbers : " << palindrome_count << endl;
   cout << "The number that has the maximum number of divisors : " << answer << endl;
 
 }
