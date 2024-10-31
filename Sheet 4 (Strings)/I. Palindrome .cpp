@@ -9,8 +9,8 @@ int main() {
 
   int size = txt.size();
 
-  for (int i = 0; i < size / 2; i++){
-    if (txt[i] != txt[size - 1 - i]){
+  for (int i = 0; i < size / 2; i++) {
+    if (txt[i] != txt[size - 1 - i]) {
       cout << "NO" << endl;
       return 0;
     }
