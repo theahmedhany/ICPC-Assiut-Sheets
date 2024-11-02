@@ -7,13 +7,9 @@ int main() {
   int size;
   cin >> size;
 
-  int count[26];
+  int count[26] = {0};
 
-  for (int i = 0; i < 26; i++){
-    count[i] = 0;
-  }
-
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     char word;
     cin >> word;
 
@@ -21,13 +17,14 @@ int main() {
     count[index]++;
   }
 
-  for (int i = 0; i < 26; i++){
+  for (int i = 0; i < 26; i++) {
     char word = i + 'a';
-
-    while (count[i] > 0){
+    while (count[i] > 0) {
       cout << word;
       count[i]--;
     }
   }
+
+  cout << endl;
 
 }
