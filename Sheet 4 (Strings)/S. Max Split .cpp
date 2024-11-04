@@ -9,13 +9,13 @@ int main() {
 
   string arry[1000];
 
+  int left_counter = 0, right_counter = 0;
   int index = 0;
-  int left_counter = 0 , right_counter = 0;
 
   string answer = "";
 
-  for (int i = 0; i < txt.size(); i++){
-    if (txt[i] == 'L'){
+  for (int i = 0; i < txt.size(); i++) {
+    if (txt[i] == 'L') {
       left_counter++;
     } else {
       right_counter++;
@@ -23,18 +23,18 @@ int main() {
 
     answer.push_back(txt[i]);
 
-    if (left_counter == right_counter){
+    if (left_counter == right_counter) {
       arry[index] = answer;
       answer.clear();
       index++;
-      right_counter = 0;
       left_counter = 0;
+      right_counter = 0;
     }
   }
 
   cout << index << endl;
 
-  for (int i = 0; i < index; i++){
+  for (int i = 0; i < index; i++) {
     cout << arry[i] << endl;
   }
 
