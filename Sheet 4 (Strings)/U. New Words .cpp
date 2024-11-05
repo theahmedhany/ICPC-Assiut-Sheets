@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -7,9 +7,9 @@ int main() {
   string txt;
   cin >> txt;
 
-  int e = 0 , g = 0 , y = 0 , p = 0 , t = 0;
+  int e = 0, g = 0, y = 0, p = 0, t = 0;
 
-  for (int i = 0; i < txt.size(); i++){
+  for (int i = 0; i < txt.size(); i++) {
     txt[i] = tolower(txt[i]);
 
     e += (txt[i] == 'e');
@@ -19,6 +19,7 @@ int main() {
     t += (txt[i] == 't');
   }
 
-  cout << min(e , min(g , min(y , min(p , t)))) << endl;
+  int result = min({e, g, y, p, t});
+  cout << result << endl;
 
 }
