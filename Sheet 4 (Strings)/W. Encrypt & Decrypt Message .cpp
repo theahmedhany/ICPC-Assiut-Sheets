@@ -15,24 +15,26 @@ int main() {
 
   int size = txt.size();
 
-  if (quarter == 1){
-    for (int i = 0; i < size; i++){
-      for (int j = 0; j < original.size(); j++){
-        if (txt[i] == original[j]){
+  if (quarter == 1) {
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < original.size(); j++) {
+        if (txt[i] == original[j]) {
           cout << key[j];
           break;
         }
       }
     }
   } else {
-    for (int i = 0; i < size; i++){
-      for (int j = 0; j < key.size(); j++){
-        if (txt[i] == key[j]){
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < key.size(); j++) {
+        if (txt[i] == key[j]) {
           cout << original[j];
           break;
         }
       }
     }
   }
+
+  cout << endl;
 
 }
