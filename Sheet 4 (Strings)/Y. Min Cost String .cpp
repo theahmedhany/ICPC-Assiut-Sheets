@@ -2,111 +2,100 @@
 
 using namespace std;
 
-int main () {
+int main() {
 
-	string value;
-	cin >> value;
+  string value;
+  cin >> value;
 
   int cost[26];
 
-	for(int i = 0; i < 26; i++){
-		cin >> cost[i];
-	}
+  for (int i = 0; i < 26; i++) {
+    cin >> cost[i];
+  }
 
-	int size = value.size();
-	int counter = 0;
+  int size = value.size();
 
-	for(int i = 0; i < size; i++){
-		counter = 0;
+  for (int i = 0; i < size; i++) {
+    if (value[i] == '?') {
+      int counter = 0;
 
-		if(value[i] == '?'){
-			for(int j = i; j < size; j++){
-				if(value[j] == '?'){
-					counter++;
-				} else {
-					break;
-				}
-			}
+      for (int j = i; j < size && value[j] == '?'; j++) {
+        counter++;
+      }
 
-			if(counter == size){
-				cout << "0" << endl;
+      if (counter == size) {
+        cout << "0" << endl;
+        for (int j = 0; j < size; j++) {
+          cout << "a";
+        }
+        return 0;
+      }
 
-				for(int j = 0; j < size; j++){
-					cout << "a";
-				}
+      if (i == 0) {
+        int min_cost = INT_MAX;
+        int best_char;
 
-				return 0;
-			} else {
-				if(i == 0){
-					int max = INT_MAX;
-					int index;
+        for (int j = 0; j < value[counter] - 97 + 1; j++) {
+          int my_cost = abs(cost[value[counter] - 97] - cost[j]);
+          if (my_cost < min_cost) {
+            min_cost = my_cost;
+            best_char = j;
+          }
+        }
 
-					for(int j = 0; j < value[counter] - 97 + 1; j++){
-						int my_cost = abs(cost[value[counter] - 97] - cost[j]);
+        char fill_char = best_char + 'a';
+        for (int j = 0; j < counter; j++) {
+          value[j] = fill_char;
+        }
 
-						if(my_cost < max){
-							max = my_cost;
-							index = j;
-						}
-					}
-					char special_character = index + 97;
+        i += counter - 1;
+      } else if (i + counter == size) {
+        int max_cost = INT_MAX;
+        int best_char;
 
-					for(int j = 0; j < counter; j++){
-						value[j] = special_character;
-					}
+        for (int j = 0; j < value[i - 1] - 97 + 1; j++) {
+          int my_cost = abs(cost[value[i - 1] - 97] - cost[j]);
+          if (my_cost < max_cost) {
+            max_cost = my_cost;
+            best_char = j;
+          }
+        }
 
-					i += counter;
-				} else if (i + counter == size){
-					int max = INT_MAX;
-					int index;
+        char fill_char = best_char + 'a';
+        for (int j = i; j < size; j++) {
+          value[j] = fill_char;
+        }
 
-					for(int j = 0; j < value[i - 1] - 97 + 1; j++){
-						int my_cost = abs(cost[value[i - 1] - 97] - cost[j]);
+        break;
+      } else {
+        int max_cost = INT_MAX;
+        int best_char;
 
-						if(my_cost < max){
-							max = my_cost;
-							index = j;
-						}
-					}
+        for (int j = 0; j < 26; j++) {
+          int my_cost = abs(cost[value[i - 1] - 97] - cost[j]) + abs(cost[j] - cost[value[i + counter] - 97]);
+          if (my_cost < max_cost) {
+            max_cost = my_cost;
+            best_char = j;
+          }
+        }
 
-					char special_character = index + 97;
-					for(int j = i; j < size; j++){
-						value[j] = special_character;
-					}
+        char fill_char = best_char + 'a';
+        for (int j = i; j < i + counter; j++) {
+          value[j] = fill_char;
+        }
 
-					break;
-				} else {
-					int max = INT_MAX;
-					int index;
+        i += counter - 1;
+      }
+    }
+  }
 
-					for(int j = 0; j < 26; j++){
-						int my_cost = abs(cost[value[i - 1] - 97] - cost[j]) + abs(cost[j] - cost[value[i + counter] - 97]);
+  long long final_cost = 0;
 
-						if(my_cost < max){
-							max = my_cost;
-							index = j;
-						}
-					}
+  for (int i = 0; i < size - 1; i++) {
+    final_cost += abs(cost[value[i] - 'a'] - cost[value[i + 1] - 'a']);
+  }
 
-					char special_character = index + 97;
+  cout << final_cost << endl;
+  cout << value << endl;
 
-					for(int j = i; j < i + counter; j++){
-						value[j] = special_character;
-					}
-
-					i += counter;
-				}
-			}
-		}
-	}
-	
-	long long finalCost = 0;
-  
-	for(int i = 0; i < size - 1; i++){
-		finalCost += abs(cost[value[i] - 97] - cost[value[i + 1] - 97]);
-	}
-
-	cout << finalCost << endl;
-	cout << value << endl;
-	
 }
