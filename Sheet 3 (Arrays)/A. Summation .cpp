@@ -2,20 +2,20 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int size;
-	cin >> size;
+  int size;
+  cin >> size;
 
-	long long sum = 0;
+  long long sum = 0;
 
-	for(int i = 1; i <= size; i++){
-		int number;
-		cin >> number;
+  for (int i = 1; i <= size; i++) {
+    long long number;
+    cin >> number;
 
-		sum += number;
-	}
+    sum += number;
+  }
 
-	cout << abs(sum) << endl;
+  cout << abs(sum) << endl;
 
 }
