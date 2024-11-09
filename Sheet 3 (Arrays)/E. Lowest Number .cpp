@@ -2,25 +2,25 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int size;
-	cin >> size;
+  int size;
+  cin >> size;
 
-	int arry[size];
+  int arry[size];
 
-	int min = 1e5;
-	int index = 0;
+  int min = 1e5;
+  int index = 0;
 
-	for (int i = 0; i < size; i++) {
-		cin >> arry[i];
+  for (int i = 0; i < size; i++) {
+    cin >> arry[i];
 
-		if (arry[i] < min) {
-			min = arry[i];
-			index = i + 1;
-		}
-	}
+    if (arry[i] < min) {
+      min = arry[i];
+      index = i + 1;
+    }
+  }
 
-	cout << min << " " << index;
+  cout << min << " " << index << endl;
 
 }
