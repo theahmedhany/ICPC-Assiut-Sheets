@@ -2,29 +2,29 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
-	int size;
-	cin >> size;
+  int size;
+  cin >> size;
 
-	int arry[size];
-	int flag = 0;
+  int arry[size];
+  bool is_palindrome = true;
 
-	for(int i = 0; i < size; i++){
-		cin >> arry[i];
-	}
+  for (int i = 0; i < size; i++) {
+    cin >> arry[i];
+  }
 
-	for(int i = 0; i <= size / 2; i++){
-		if(arry[i] != arry[size - 1 - i]){
-			flag = 1;
-			break;
-		}
-	}
+  for (int i = 0; i < size / 2; i++) {
+    if (arry[i] != arry[size - 1 - i]) {
+      is_palindrome = false;
+      break;
+    }
+  }
 
-	if(flag == 0){
-		cout << "YES" << endl;
-	} else {
-		cout << "NO" << endl;
-	}
+  if (is_palindrome) {
+    cout << "YES" << endl;
+  } else {
+    cout << "NO" << endl;
+  }
 
 }
