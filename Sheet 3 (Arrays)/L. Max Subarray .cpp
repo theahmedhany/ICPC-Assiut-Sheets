@@ -2,29 +2,27 @@
 
 using namespace std;
 
-int main (){
+int main() {
 
-  int size;
-  cin >> size;
+  int test_cases;
+  cin >> test_cases;
 
-  while (size--){
-    int number;
-    cin >> number;
+  while (test_cases--) {
+    int size;
+    cin >> size;
 
-    int arry[number];
+    int arry[size];
 
-    for (int i = 0; i < number; i++){
+    for (int i = 0; i < size; i++) {
       cin >> arry[i];
     }
 
-    for (int ii = 0; ii < number; ii++){
-      cout << arry[ii] << " ";
+    for (int i = 0; i < size; i++) {
+      int maximum = arry[i];
+      cout << maximum << " ";
 
-      int maximum = arry[ii];
-
-      for (int iii = ii + 1; iii < number; iii++){
-        maximum = max(maximum, arry[iii]);
-
+      for (int j = i + 1; j < size; j++) {
+        maximum = max(maximum, arry[j]);
         cout << maximum << " ";
       }
     }
