@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
 
   int number_1, number_2;
   cin >> number_1 >> number_2;
@@ -10,28 +10,23 @@ int main(){
   string code;
   cin >> code;
 
-  if (code.size() != number_1 + number_2 + 1){
+  if (code.size() != number_1 + number_2 + 1) {
     cout << "No" << endl;
     return 0;
   }
 
-  if (code[number_1] != '-'){
+  if (code[number_1] != '-') {
     cout << "No" << endl;
     return 0;
   }
 
-  int counter = 0;
-
-  for (int i = 0; i < code.size(); i++){
-    if (code[i] >= 48 && code[i] <= 57 && i != number_1){
-      counter++;
+  for (int i = 0; i < code.size(); i++) {
+    if (i != number_1 && (code[i] < '0' || code[i] > '9')) {
+      cout << "No" << endl;
+      return 0;
     }
   }
 
-  if (counter == number_1 + number_2){
-    cout << "Yes" << endl;
-  } else {
-    cout << "No" << endl;
-  }
+  cout << "Yes" << endl;
 
 }
