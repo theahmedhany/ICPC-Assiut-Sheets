@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -9,18 +9,16 @@ int main() {
 
   int arry[1000001] = {0};
 
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     int number;
     cin >> number;
 
-    if (arry[number] == 0){
-      arry[number] = 1;
-    } else {
-      arry[number] = arry[number] + 1;
+    if (number >= 1 && number <= counter) {
+      arry[number]++;
     }
   }
 
-  for (int i = 1; i <= counter; i++){
+  for (int i = 1; i <= counter; i++) {
     cout << arry[i] << endl;
   }
 
