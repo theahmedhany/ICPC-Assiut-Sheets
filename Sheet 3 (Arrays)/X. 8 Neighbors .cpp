@@ -9,8 +9,8 @@ int main() {
 
   char arry[101][101];
 
-  for (int i = 1; i <= row; i++){
-    for (int j = 1; j <= column; j++){
+  for (int i = 1; i <= row; i++) {
+    for (int j = 1; j <= column; j++) {
       cin >> arry[i][j];
     }
   }
@@ -27,7 +27,7 @@ int main() {
       arry[row_index + 1][column_index + 1] != '.' &&
       arry[row_index - 1][column_index + 1] != '.' &&
       arry[row_index + 1][column_index - 1] != '.'
-    ){
+    ) {
     cout << "yes";
   } else {
     cout << "no";
