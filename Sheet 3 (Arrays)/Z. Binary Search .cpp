@@ -1,13 +1,13 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int binarySearch(int arry[], int left, int right, int search){
+int binarySearch(const int arry[], int left, int right, int search) {
 
-  while (left <= right){
+  while (left <= right) {
     int mid = left + (right - left) / 2;
 
-    if (arry[mid] == search){
+    if (arry[mid] == search) {
       return mid;
     } else if (arry[mid] < search) {
       left = mid + 1;
@@ -27,19 +27,19 @@ int main() {
 
   int arry[size];
 
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     cin >> arry[i];
   }
 
   sort(arry, arry + size);
 
-  while (search_number--){
+  while (search_number--) {
     int search;
     cin >> search;
 
     int result = binarySearch(arry, 0, size - 1, search);
 
-    if (result == -1){
+    if (result == -1) {
       cout << "not found" << endl;
     } else {
       cout << "found" << endl;
